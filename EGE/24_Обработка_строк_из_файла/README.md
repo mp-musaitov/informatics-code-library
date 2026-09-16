@@ -279,7 +279,7 @@ print(best)
 ```python
 import re
 
-pattern = r'[1-9][0-9]*(?:[-*][1-9][0-9]*)*'
+pattern = r'(?:0|[1-9][0-9]*)(?:[-*](?:0|[1-9][0-9]*))*'
 parts = re.findall(pattern, s)
 print(max(map(len, parts)))
 ```

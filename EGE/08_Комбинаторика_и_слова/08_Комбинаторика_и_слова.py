@@ -164,15 +164,15 @@ for i, word in enumerate(product(alphabet, repeat=3), 1):
 # Условие:
 # Универсальная заготовка для большинства задач №8.
 
-count = 0
-
-for word in product('АБВГ', repeat=5):
-    word = ''.join(word)
-
-    if условие:
-        count += 1
-
-print(count)
+# count = 0
+#
+# for word in product('АБВГ', repeat=5):
+#     word = ''.join(word)
+#
+#     if условие:
+#         count += 1
+#
+# print(count)
 
 
 # ============================================================
