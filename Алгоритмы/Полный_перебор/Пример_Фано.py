@@ -1,7 +1,7 @@
 def fano(codes):
-    for a in codes:
-        for b in codes:
-            if a != b and b.startswith(a):
+    for i in range(len(codes)):
+        for j in range(len(codes)):
+            if i != j and codes[j].startswith(codes[i]):
                 return False
     return True
 
