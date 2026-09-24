@@ -133,18 +133,21 @@ def is_prime(n):
 # ============================================================
 def prime_divisors(n):
     result = []
+    d = 2
 
-    for d in range(2, int(n ** 0.5) + 1):
+    while d * d <= n:
         if n % d == 0:
-            if is_prime(d):
-                result.append(d)
+            result.append(d)
 
-            second = n // d
+            while n % d == 0:
+                n //= d
 
-            if second != d and is_prime(second):
-                result.append(second)
+        d += 1
 
-    return sorted(result)
+    if n > 1:
+        result.append(n)
+
+    return result
 
 
 # ============================================================
