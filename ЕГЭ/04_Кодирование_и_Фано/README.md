@@ -202,9 +202,9 @@ B = 01
 
 ```python
 def fano(codes):
-    for a in codes:
-        for b in codes:
-            if a != b and b.startswith(a):
+    for i in range(len(codes)):
+        for j in range(len(codes)):
+            if i != j and codes[j].startswith(codes[i]):
                 return False
     return True
 
@@ -221,6 +221,8 @@ print(fano(codes + [new_code]))
 ```
 
 Если получаем `True`, весь набор удовлетворяет прямому условию Фано.
+
+Сравниваем именно **позиции** `i` и `j`, а не значения кодовых слов. Это важно: два разных символа не могут иметь одинаковый код. Например, набор `['0', '0']` должен вернуть `False`.
 
 ---
 
@@ -240,9 +242,9 @@ bin(n)[2:]
 
 ```python
 def fano(codes):
-    for a in codes:
-        for b in codes:
-            if a != b and b.startswith(a):
+    for i in range(len(codes)):
+        for j in range(len(codes)):
+            if i != j and codes[j].startswith(codes[i]):
                 return False
     return True
 
@@ -320,9 +322,9 @@ bin(1)[2:].zfill(3) # '001'
 
 ```python
 def fano(codes):
-    for a in codes:
-        for b in codes:
-            if a != b and b.startswith(a):
+    for i in range(len(codes)):
+        for j in range(len(codes)):
+            if i != j and codes[j].startswith(codes[i]):
                 return False
     return True
 
@@ -368,9 +370,9 @@ for length in range(1, 6):
 
 ```python
 def reverse_fano(codes):
-    for a in codes:
-        for b in codes:
-            if a != b and b.endswith(a):
+    for i in range(len(codes)):
+        for j in range(len(codes)):
+            if i != j and codes[j].endswith(codes[i]):
                 return False
     return True
 ```
