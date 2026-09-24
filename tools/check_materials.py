@@ -38,8 +38,10 @@ def check_markdown_links() -> list[str]:
 
     for path in files_with_suffix('.md'):
         text = path.read_text(encoding='utf-8')
+        # Ссылки внутри fenced code blocks не являются Markdown-ссылками.
+        text_without_code = re.sub(r'```.*?```', '', text, flags=re.DOTALL)
 
-        for raw_target in LINK_RE.findall(text):
+        for raw_target in LINK_RE.findall(text_without_code):
             target = raw_target.strip().split('#', 1)[0]
 
             if not target:
