@@ -410,18 +410,33 @@ def is_prime(n):
 ```python
 def prime_divisors(n):
     result = []
+    d = 2
 
-    for d in range(2, int(n ** 0.5) + 1):
+    while d * d <= n:
         if n % d == 0:
-            if is_prime(d):
-                result.append(d)
+            result.append(d)
 
-            second = n // d
+            while n % d == 0:
+                n //= d
 
-            if second != d and is_prime(second):
-                result.append(second)
+        d += 1
 
-    return sorted(result)
+    if n > 1:
+        result.append(n)
+
+    return result
+```
+
+Функция последовательно удаляет из числа найденные простые множители. Если после этого остаётся число больше 1, оно тоже является простым делителем.
+
+Например:
+
+```text
+prime_divisors(1)  → []
+prime_divisors(13) → [13]
+prime_divisors(49) → [7]
+prime_divisors(60) → [2, 3, 5]
+prime_divisors(77) → [7, 11]
 ```
 
 Но если задача требует только минимальный простой делитель, полный список обычно не нужен.
