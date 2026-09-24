@@ -204,8 +204,8 @@ print(best)
 def same_type(a, b):
     return a.isalpha() == b.isalpha()
 
-best = 1
-cur = 1
+best = 0 if not s else 1
+cur = best
 
 for i in range(1, len(s)):
     if not same_type(s[i - 1], s[i]):
@@ -218,7 +218,7 @@ for i in range(1, len(s)):
 print(best)
 ```
 
-Такой проход выполняется за один просмотр строки.
+Такой проход выполняется за один просмотр строки. Начальное значение `best` отдельно учитывает пустую строку: для неё максимальная длина равна `0`, а не `1`.
 
 ---
 
