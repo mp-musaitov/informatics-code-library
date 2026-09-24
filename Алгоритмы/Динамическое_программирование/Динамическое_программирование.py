@@ -113,15 +113,18 @@ for current in range(1, amount + 1):
                 dp[current] = new_count
                 previous_coin[current] = coin
 
-selected = []
-current = amount
+if dp[amount] is not None:
+    selected = []
+    current = amount
 
-while current > 0:
-    coin = previous_coin[current]
-    selected.append(coin)
-    current -= coin
+    while current > 0:
+        coin = previous_coin[current]
+        selected.append(coin)
+        current -= coin
 
-print(selected)
+    print(selected)
+else:
+    print('Сумму набрать нельзя')
 
 
 # ============================================================
