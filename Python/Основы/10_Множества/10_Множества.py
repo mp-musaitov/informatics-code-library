@@ -56,6 +56,10 @@ numbers = [2, 5, 2, 7]
 has_duplicates = len(set(numbers)) < len(numbers)
 print(has_duplicates)  # True
 
+# Проверка, все ли элементы различны
+all_unique = len(set(numbers)) == len(numbers)
+print(all_unique)  # False
+
 # БЛОК 9. Перебор по возрастанию
 numbers = {6, 2, 4}
 for x in sorted(numbers):
