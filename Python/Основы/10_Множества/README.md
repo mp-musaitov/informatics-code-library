@@ -96,6 +96,19 @@ print(len(common))     # 2 разных общих значения
 print(sorted(common))  # [5, 7]
 ```
 
+## Проверка повторов
+
+```python
+numbers = [2, 5, 2, 7]
+has_duplicates = len(set(numbers)) < len(numbers)
+print(has_duplicates)  # True
+
+all_unique = len(set(numbers)) == len(numbers)
+print(all_unique)  # False
+```
+
+`has_duplicates` проверяет, есть ли повторы, а `all_unique` — все ли элементы различны.
+
 ## Частые ошибки
 
 - создавать пустое множество через `{}`;
