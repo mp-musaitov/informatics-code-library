@@ -51,7 +51,7 @@ else:
 # БЛОК 9. Таблица с независимыми строками
 rows = 2
 cols = 3
-matrix = [[0] * cols for i in range(rows)]
+matrix = [[0] * cols for _ in range(rows)]
 matrix[0][0] = 5
 print(matrix)  # [[5, 0, 0], [0, 0, 0]]
 
